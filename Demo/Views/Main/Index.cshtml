@@ -1,0 +1,61 @@
+﻿@using Demo.Models
+@model MainViewModel
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Kayıt</th>
+            <th>Başlangıç</th>
+            <th>Bitiş</th>
+            <th>Toplam Süre (Saat)</th>
+            <th>Statu</th>
+            <th>Duruş Nedeni</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var row in Model.Tablo1)
+        {
+            <tr>
+                <td>@row.Kaydet</td>
+                <td>@row.Baslangic.ToString("yyyy-MM-dd HH:mm")</td>
+
+                <td>@row.Bitis.ToString("yyyy-MM-dd HH:mm")</td>
+                <td>@row.Sure.ToString()</td>
+                <td>@row.Statu</td>
+                <td>@row.Neden</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<table class="table">
+    <thead>
+        <tr>
+            
+            <th>Başlangıç</th>
+            <th>Bitiş</th>
+            
+            
+            <th>Duruş Nedeni</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var row in Model.Tablo2)
+        {
+            <tr>
+                
+                <td>@row.Baslangic.ToString("HH:mm")</td>
+                <td>@row.Bitis.ToString("HH:mm")</td>
+
+               
+                <td>@row.Neden</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<form method="post" asp-controller="Main" asp-action="Index1">
+    
+    <button type="submit">Sırala</button>
+</form>

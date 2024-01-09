@@ -1,0 +1,30 @@
+﻿@using Demo.Models
+@model LastViewModel
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Kayıt</th>
+            <th>Başlangıç</th>
+            <th>Bitiş</th>
+            <th>Toplam Süre (Saat)</th>
+            <th>Statu</th>
+            <th>Duruş Nedeni</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var row in Model.Tablo3)
+        {
+            <tr>
+                <td>@row.Kaydet</td>
+                <td>@row.Baslangic.ToString("yyyy-MM-dd HH:mm")</td>
+
+                <td>@row.Bitis.ToString("yyyy-MM-dd HH:mm")</td>
+                <td>@row.Sure.ToString()</td>
+                <td>@row.Statu</td>
+                <td>@row.Neden</td>
+            </tr>
+        }
+    </tbody>
+</table>
